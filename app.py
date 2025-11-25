@@ -32,7 +32,7 @@ SYSTEM_PROMPT = """
 """
 
 def get_gemini_response(history):
-    model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=SYSTEM_PROMPT)
+    model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=SYSTEM_PROMPT)
     chat = model.start_chat(history=history)
     # Изпращаме последното съобщение, но с историята
     response = chat.send_message(history[-1]['parts'][0]) 
