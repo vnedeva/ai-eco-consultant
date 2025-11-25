@@ -85,7 +85,7 @@ if prompt := st.chat_input("Опиши проекта си тук..."):
                 api_history = [{"role": m["role"].replace("assistant", "model"), "parts": m["parts"]} for m in st.session_state.messages]
                 
                 # Извикване на модела
-                model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=SYSTEM_PROMPT)
+                model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=SYSTEM_PROMPT)
                 response = model.generate_content(api_history)
                 
                 st.markdown(response.text)
